@@ -1,127 +1,248 @@
 <!DOCTYPE html>
 <html lang="pl">
-	<div id="coFrameDiv" style="height:0px;">
-		<iframe id="coToolbarFrame" src="./pliki/placeholder.html" style="height:0px;width:100%;"></iframe>
-	</div>
-	<div cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: none;" fid="1111133159"></div>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>CLOSE PAGE</title>
-		<script id="facebook-jssdk" src="./pliki/sdk.js"></script>
-		<script src="./pliki/jquery-1.10.2.js"></script>
-		<script src="./pliki/jquery-ui.js"></script>
-		<script>
 
-			var tlooo = new Audio('pliki/wilki.mp3');
-			tlooo.volume=0.1;
-			tlooo.play();
+<head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Oficjalna strona Pana Otleta. Dziwnego człowieka, co coś niby umie, ale jednak nie.">
+    <meta name="author" content="Pan Otlet">
 
-		$(document).ready(function(){
-			//$.post("http://google.pl",function loadData(dane){$('#page').html(dane);});
-			//$('#page').delay(2000).effect("pulsate",1000).delay(100).fadeOut(2000, function() {
-			$('#page').delay(1100).fadeOut(200, function() {
-				//$("#page").html("");
-				$("#strona").fadeIn(2500,function() {
-					$('#text').fadeIn(20);
-					type_text();
-				});
-			});
-		});
-		var tl=new Array(
-			"Z przykrością informujemy o śmierci Otlet'a",
-			"",
-			"PanOtlet działał od 2012 roku",
-			"Przez ten czas sporo zjebał rzeczy,",
-			"udawał, że potrafii coś robić,",
-			"i przepierdalał kasę na alkohol.",
-			"",
-			"Co Dalej? Umar i pogrzebion"
-		);
-		var speed=60;
-		var index=0; text_pos=0;
-		var str_length=tl[0].length;
-		var contents, row;
+    <title>Pan Otlet</title>
 
-		function type_text()
-		{
-			contents='';
-			row=Math.max(0,index-20);
-			while(row<index)
-				contents += tl[row++] + '\r\n';
-			document.forms[0].elements[0].value = contents + tl[index].substring(0,text_pos) + "_";
-			if(text_pos++==str_length)
-			{
-				text_pos=0;
-				index++;
-				if(index!=tl.length)
-				{
-					str_length=tl[index].length;
-					setTimeout("type_text()",500);
-				}
-				else
-					$("#closed").fadeIn(200,function() {
-						var audio = new Audio('pliki/close.mp3');
-						audio.volume=1;
-						audio.play();
-						$('#extra').slideDown(500);
-					});
-			} else
-				setTimeout("type_text()",speed);
-		}
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-		</script>
-		<style>
-			*,html,div,body{margin:0;padding:0;}
-			#extra{display:none;}
-		</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-		<style>
-		video#bgvid {
-			position: fixed; right: 0; bottom: 0;
-			min-width: 100%; min-height: 100%;
-			width: auto; height: auto; z-index: -100;
-			background: url(bg.jpg) no-repeat;
-			background-size: cover;
-		}
-		A:link {color: #FFFFFF}</style>
-	</head>
+</head>
 
 <body>
-	<video preload autoplay loop poster="plik/bg.jpg" id="bgvid">
-		<source src="pliki/bg.mp4" type="video/mp4">
-	</video>
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top">Pan Otlet</a>
+            </li>
+            <li>
+                <a href="#top">Home</a>
+            </li>
+            <li>
+                <a href="#about">O Mnie</a>
+            </li>
+            <li>
+                <a href="#services">Usługi</a>
+            </li>
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact">Kontakt</a>
+            </li>
+        </ul>
+    </nav>
 
-	<div id="page" style="width: 100%; display: none;"></div>
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>PanOtlet</h1>
+            <h3>Oficjalna strona</h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">Poznaj mnie!</a>
+        </div>
+    </header>
+	
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Kim jestem?</h2>
+                    <p class="lead">Jestem zwykłym człowiekiem, co mimo wielkich ambicji, nic więcej nie ogarnia xD</p>
+                    <p class="lead">Obecnie się uczę, powoli realizując swoje marzenia.</p>
+                    <p class="lead">Uczę się języków PHP oraz JavaScript. Chcę zostać webdeveloperem (#haha)</p>
+                    <p class="lead">Daleko mi do doskonałości, ale staram się realizować wszystko najlepiej jak potrafię.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<div id="strona">
-		<div id="info" style="background:url(&#39;pliki/logo.png&#39;) no-repeat center center;width:855px;height:445px;margin:0 auto;">
-			<div id="closed" style="background:url(&#39;pliki/closed.png&#39;) no-repeat center center;width:855px;height:445px;display:none;"></div>
-		</div>
-		<center>
-			<form><textarea id="text" style="text-shadow: 0.1em 0.1em #000000; color: #FFFFFF; font-size: 16px; font-family: verdana; text-align: center; border: 0px; background: rgb(255, 255, 255); background-color: transparent;" rows="10" cols="70" disabled="disabled"></textarea></form>
-			<br>
-			<div id="extra">
-				<a href="ts3server://ts.23games.me">Zapraszam na TeamSpeak3:</a>
-				<br>
-				<input onclick="this.select();" type="text" readonly="" style="text-align: center;" size="20" value="ts.23games.me">
-				<br />
-				<!--Facebook-->
-				<div id="fb-root"></div>
-					<script>
-						(function(d, s, id) {
-						  var js, fjs = d.getElementsByTagName(s)[0];
-						  if (d.getElementById(id)) return;
-						  js = d.createElement(s); js.id = id;
-						  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=464948210234149&version=v2.0";
-						  fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));
-					</script>
-				<div class="fb-like" data-href="https://facebook.com/PanOtlet" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-				<br />
-			</div>
-		</center>
-	</div>
+    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Moje usługi</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Serwis</strong>
+                                </h4>
+                                <p>Zapewniam swoją pomoc w doborze sprzętu do potrzeb użytkownika oraz jego naprawy.</p>
+                                <!--<a href="#" class="btn btn-light">Dupa</a>-->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Outsourcing informatyczny</strong>
+                                </h4>
+                                <p>Zajmuję się utrzymaniem i obsługą informatyczną, konfiguracją sprzętu i oprogramowania.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Tworzenie stron WWW</strong>
+                                </h4>
+                                <p>Tworzę strony WWW, aplikacje internetowe. Również wdrażam gotowe rozwiązania, dostosowując je do potrzeb.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>"We fight because we believe"</h1>
+            <h3>~~John Teller</h3>
+        </div>
+    </aside>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Moje prace</h2>
+					<p>Trwa uzupełnianie</p>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<a href="#" class="btn btn-dark">View More Items</a>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38174.883358127605!2d16.449831550000003!3d53.27287009999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47015d74bcbc4e3b%3A0x8edcc666eedf3fa5!2zV2HFgmN6!5e0!3m2!1spl!2spl!4v1424186431322"></iframe>
+        <br />
+        <small>
+            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38174.883358127605!2d16.449831550000003!3d53.27287009999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47015d74bcbc4e3b%3A0x8edcc666eedf3fa5!2zV2HFgmN6!5e0!3m2!1spl!2spl!4v1424186431322"></a>
+        </small>
+        </iframe>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Pan Otlet</strong></h4>
+                    <p>78-600 Wałcz</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:otlet@jest.guru">otlet@jest.guru</a></li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="http://fb.com/PanOtlet"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://youtube.com/PanOtlet"><i class="fa fa-youtube fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/PanOtlet"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Pan Otlet</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
 </body>
+
 </html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<div id="coFrameDiv" style="height:0px;">
+		<iframe id="coToolbarFrame" src="./pliki/placeholder.html" style="height:0px;width:100%;"></iframe>
+	</div>
+	<div cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: none;" fid="1111133159"></div>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>CLOSE PAGE</title>
+		<script id="facebook-jssdk" src="./pliki/sdk.js"></script>
+		<script src="./pliki/jquery-1.10.2.js"></script>
+		<script src="./pliki/jquery-ui.js"></script>
+		<script>
+
+			var tlooo = new Audio('pliki/wilki.mp3');
+			tlooo.volume=0.1;
+			tlooo.play();
+
+
+		$(document).ready(function(){
+			//$.post("http://google.pl",function loadData(dane){$('#page').html(dane);});
+			//$('#page').delay(2000).effect("pulsate",1000).delay(100).fadeOut(2000, function() {
+			$('#page').delay(1100).fadeOut(200, function() {
+				//$("#page").html("");
+				$("#strona").fadeIn(2500,function() {
+					$('#text').fadeIn(20);
+					type_text();
+				});
+			});
+		});
+		var tl=new Array(
+			"Z przykrością informujemy o śmierci Otlet'a",
+			"",
+			"PanOtlet działał od 2012 roku",
+			"Przez ten czas sporo zjebał rzeczy,",
+			"udawał, że potrafii coś robić,",
+			"i przepierdalał kasę na alkohol.",
+			"",
+			"Co Dalej? Umar i pogrzebion"
+		);
+		var speed=60;
+		var index=0; text_pos=0;
+		var str_length=tl[0].length;
+		var contents, row;
+
+		function type_text()
+		{
+			contents='';
+			row=Math.max(0,index-20);
+			while(row<index)
+				contents += tl[row++] + '\r\n';
+			document.forms[0].elements[0].value = contents + tl[index].substring(0,text_pos) + "_";
+			if(text_pos++==str_length)
+			{
+				text_pos=0;
+				index++;
+				if(index!=tl.length)
+				{
+					str_length=tl[index].length;
+					setTimeout("type_text()",500);
+				}
+				else
+					$("#closed").fadeIn(200,function() {
+						var audio = new Audio('pliki/close.mp3');
+						audio.volume=1;
+						audio.play();
+						$('#extra').slideDown(500);
+					});
+			} else
+				setTimeout("type_text()",speed);
+		}
+
+		</script>
+		<style>
+			*,html,div,body{margin:0;padding:0;}
+			#extra{display:none;}
+		</style>
+
+		<style>
+		video#bgvid {
+			position: fixed; right: 0; bottom: 0;
+			min-width: 100%; min-height: 100%;
+			width: auto; height: auto; z-index: -100;
+			background: url(bg.jpg) no-repeat;
+			background-size: cover;
+		}
+		A:link {color: #FFFFFF}</style>
+	</head>
+
+<body>
+	<video preload autoplay loop poster="plik/bg.jpg" id="bgvid">
+		<source src="pliki/bg.mp4" type="video/mp4">
+	</video>
+
+	<div id="page" style="width: 100%; display: none;"></div>
+
+	<div id="strona">
+		<div id="info" style="background:url(&#39;pliki/logo.png&#39;) no-repeat center center;width:855px;height:445px;margin:0 auto;">
+			<div id="closed" style="background:url(&#39;pliki/closed.png&#39;) no-repeat center center;width:855px;height:445px;display:none;"></div>
+		</div>
+		<center>
+			<form><textarea id="text" style="text-shadow: 0.1em 0.1em #000000; color: #FFFFFF; font-size: 16px; font-family: verdana; text-align: center; border: 0px; background: rgb(255, 255, 255); background-color: transparent;" rows="10" cols="70" disabled="disabled"></textarea></form>
+			<br>
+			<div id="extra">
+				<a href="ts3server://ts.23games.me">Zapraszam na TeamSpeak3:</a>
+				<br>
+				<input onclick="this.select();" type="text" readonly="" style="text-align: center;" size="20" value="ts.23games.me">
+				<br />
+				<!--Facebook-->
+				<div id="fb-root"></div>
+					<script>
+						(function(d, s, id) {
+						  var js, fjs = d.getElementsByTagName(s)[0];
+						  if (d.getElementById(id)) return;
+						  js = d.createElement(s); js.id = id;
+						  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=464948210234149&version=v2.0";
+						  fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+					</script>
+				<div class="fb-like" data-href="https://facebook.com/PanOtlet" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+				<br />
+			</div>
+		</center>
+	</div>
+</body>
+</html>
