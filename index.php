@@ -143,6 +143,8 @@
             </div>
             <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
                 <div><img u="image" src2="img/prace/esportstacja.png" /></div>
+                <div><img u="image" src2="img/prace/23games.png" /></div>
+                <div><img u="image" src2="img/prace/23gamesforum.png" /></div>
             </div>
             <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
                 <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
@@ -166,14 +168,20 @@
                             <a href="http://fb.com/PanOtlet"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>
                         <li>
+                            <a href="http://twitter.com/PanOtlet"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://github.com/PanOtlet"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
                             <a href="http://youtube.com/PanOtlet"><i class="fa fa-youtube fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="http://twitter.com/PanOtlet"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a href="http://twitch.com/PanOtlet"><i class="fa fa-twitch fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Pan Otlet</p>
+                    <p class="text-muted">Copyright 2014-<?php echo date("Y")?> &copy; Pan Otlet</p>
                 </div>
             </div>
         </div>
