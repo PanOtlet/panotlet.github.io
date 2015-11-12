@@ -15,7 +15,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
+    <link rel="image_src" href="../img/bg.png" / >
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,16 +43,22 @@
                 <a href="#services">Usługi</a>
             </li>
             <li>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Kontakt</a>
             </li>
             <li>
-                <a href="#contact">Kontakt</a>
+                <a href="./Jola">Laurka informatyczna</a>
+            </li>
+            <li>
+                <a href="./die">Pożegnanie</a>
+            </li>
+            <li>
+                <a href="./pomoc">Akcja POMAGAM</a>
             </li>
         </ul>
     </nav>
 
     <header id="top" class="header"></header>
-	
+
     <section id="about" class="about">
         <div class="container">
             <div class="row">
@@ -124,35 +130,6 @@
         </div>
     </aside>
 
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Moje prace</h2>
-					<p>Trwa uzupełnianie</p>
-                    <hr class="small">
-				</div>
-			</div>
-		<div>
-    </section>
-	
-        <div id="slider1_container" style="display: none; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
-            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            </div>
-            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
-                <div><img u="image" src2="img/prace/esportstacja.png" /></div>
-                <div><img u="image" src2="img/prace/23games.png" /></div>
-                <div><img u="image" src2="img/prace/23gamesforum.png" /></div>
-            </div>
-            <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
-                <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
-            </div>
-            <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;"></span>
-            <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px"></span>
-        </div>
-
     <footer>
         <div class="container">
             <div class="row">
@@ -214,7 +191,7 @@
                 $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
                 $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
                 $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-              
+
                 $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
                     $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
                     $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
